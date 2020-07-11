@@ -1,23 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
+import showCacheExample from "./examples/computed-cache";
+
+const examples = {
+  'Computed Caching': showCacheExample,
+  'Test': () => {}
+};
 
 function App() {
+  const [currentExample, setExample] = useState('Computed Caching');
+
+  useEffect(() => {
+    //@ts-ignore
+    examples[currentExample]();
+
+  }, [currentExample]);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>Current Example: {currentExample}</div>
+        {
+          Object.keys(examples).map((key) => {
+            return (
+                <div key={key}>
+                  <span onClick={() => setExample(key)}>{key}</span>
+                </div>
+            )
+          })
+        }
       </header>
     </div>
   );
