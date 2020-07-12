@@ -1,12 +1,9 @@
 ## Mobx Tips And Pitfals
 You can run the project with `npm run start` and choose the selected example and it will run it self and you can play with it in the console.
 
+[Link To Article](https://medium.com/@georgyglezer/mobx-tips-and-pitfalls-92e635108653)
+![Alt text](pic.png)
 
-- Image
-- Article
-
-<br />
-<br />
 --------------------------------------------------------------------------
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
